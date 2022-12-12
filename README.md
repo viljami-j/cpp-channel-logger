@@ -9,6 +9,8 @@ There are two versions:
 ```CLog.hpp``` which prioritizes human-readable implementations.  
 ```CLog-minified.hpp``` which aims to be as tiny as possible, thus sacrificing readability.
 
+Only tagged releases are suitable for use in production.
+
 Note: comparing them side-by-side might be a great way to learn!
 
 ## Help section
