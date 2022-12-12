@@ -9,9 +9,22 @@
 
 using namespace std;
 
-#if __cplusplus >= 201703L
-#pragma message "test"
-#endif // __cplusplus >= 201703L
+#ifdef _MSC_VER
+	#if _MSVC_LANG < 201703L
+		static_assert(false, "You need to use C++20 or newer to support CLog.");
+		static_assert(false, "Refer here on how to change it: https://github.com/nucpri/cpp-channel-logger/blob/main/README.md#changing-the-c-language-standard");
+	#endif // __cplusplus >= 201703L
+#endif
+
+// WORKAROUND, see: https://developercommunity.visualstudio.com/t/-cplusplus-macro-does-not-report-correct-c-version/1280944
+// /Zc:__cplusplus option isn't a suitable solution in this case
+// If not using MSVC
+#ifndef _MSC_VER
+	#if __cplusplus < 201703L
+		static_assert(false, "You need to use C++20 or newer to support CLog.");
+		static_assert(false, "Refer here on how to change it: https://github.com/nucpri/cpp-channel-logger/blob/main/README.md#changing-the-c-language-standard");
+	#endif // __cplusplus >= 201703L
+#endif
 
 // TODO: Might not be the most optimal name, didn't think too long about it
 struct ChannelConfig {
