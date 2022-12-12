@@ -1,3 +1,7 @@
+# TODO:
+Add tests to verify that:
+- CLog.hpp & CLog-minified.hpp provide the same output
+
 # cpp-channel-logger
 CLog is a well-documented single-file header-only library that aims to provide powerful &amp; readable single-line logging. NOTE: well-documented isn't true at this point of time :)
 
