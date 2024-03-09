@@ -1,5 +1,5 @@
 # cpp-channel-logger
-CLog aims to be a simple, well-documented single-file header-only library that aims to provide powerful &amp; readable single-line logging.
+A simple, single-file header-only library that values readability.
 
 ***Only tagged releases are suitable for use in production.***
 
